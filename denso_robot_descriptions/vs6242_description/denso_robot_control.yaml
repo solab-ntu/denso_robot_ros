@@ -1,0 +1,20 @@
+vs6242:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    # Need to modify the ros_rate in denso_robot_control/src/denso_robot_control
+    publish_rate: 125  
+
+  arm_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+    
+    # sample frequency of topic, /vs6242/arm_controller/follow_joint_trajectory/feedback 
+    action_monitor_rate: 100 
+
+ 
