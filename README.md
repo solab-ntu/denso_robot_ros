@@ -105,48 +105,6 @@ There are three interface to control robot with [MoveIt](http://docs.ros.org/kin
    There is a [moveit GUI plugin](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/quickstart_in_rviz/quickstart_in_rviz_tutorial.html) in Rviz interface, just drag the end effector and excute robot as shown in the GIF
 ![](doc/img/moveitGUI.gif)
 
-
-1. **Commander Scripting**
-    Use shell-like command interact with robot, first run the command in the new terminal windows,
-   ```
-   roslaunch moveit_cmdline_commander moveit_cmdline_commander.launch
-   ```
-    
-    The command below will start a command line interface tool that allows you to connect to a running instance of the move_group node. The first command you should type is:
-    ```
-    use arm
-    ```
-    
-    This will connect to the move_group node for the group name you specified (in the Denso, for instance, you could connect to arm). You can now execute commands on that group. This command, current, will show you the current state of your group:
-    ```
-    current
-    ```
-    
-    To record that state under a specific name you can simply type:
-    ```
-    rec goal
-    ```
-    
-    This will remember the current joint values of the robot group under the name `goal`. Matlab-like syntax is available for modifying joint values. We then modify the first joint of goal to 0.2. You may need to use a different value instead of 0.2 (it needs to be within your allowed bounds and not cause collisions). The go command plans a motion and executes it.
-
-    To get the robot to move, you could type, for example:
-    ```
-    goal[0] = 0.2
-    go goal
-    ```
-    
-    Instead of calling go you could also type:
-    ```
-    goal[0] = 0.2
-    goal[1] = 0.2
-    plan goal
-    execute
-    ```
-    
-    This is slightly inefficient, but the advantage is that the plan command allows you to visualize the computed motion plan in RViz before you actually issue the execute command.
-
-    For a list of supported commands, you can type `help`. To exit the moveit_commander interface you can type `quit`.
-
 2. **Python interface**
 
    Run the command in the new terminal windows,
