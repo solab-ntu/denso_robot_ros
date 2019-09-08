@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/data/catkin_ws/devel/include",
+        "/data/denso_ws/devel/include",
+        "/opt/ros/kinetic/include",
+        "/data/catkin_ws/src/pylon_camera/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}
